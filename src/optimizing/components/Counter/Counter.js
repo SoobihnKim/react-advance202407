@@ -1,10 +1,11 @@
-import React, { useState, useCallback } from 'react';
+import React, {useState, useCallback, useMemo} from 'react';
 
 import IconButton from '../UI/IconButton';
 import MinusIcon from '../UI/Icons/MinusIcon';
 import PlusIcon from '../UI/Icons/PlusIcon';
 import CounterOutput from './CounterOutput';
 import { log } from '../../log';
+import CounterHistory from "./CounterHistory";
 
 const isPrime = number => {
     log(
@@ -29,7 +30,7 @@ const isPrime = number => {
 
 const Counter = ({ initialCount }) => {
     log('<Counter /> rendered', 1);
-    const initialCountIsPrime = isPrime(initialCount);
+    const initialCountIsPrime = useMemo(() => isPrime(initialCount), [initialCount]);
 
     const [counter, setCounter] = useState(initialCount);
 
@@ -60,6 +61,7 @@ const Counter = ({ initialCount }) => {
                     Increment
                 </IconButton>
             </p>
+            <CounterHistory history={[1, 52,1 ]} />
         </section>
     );
 };
