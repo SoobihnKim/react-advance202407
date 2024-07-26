@@ -3,6 +3,7 @@ import {createStore} from "redux";
 // 액션 타입 상수
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
+export const MULTIPLY = 'MULTIPLY';
 
 // 관리할 초기 상태값 객체
 const initialCountState = {
@@ -31,6 +32,10 @@ const counterReducer = (state = initialCountState, action) => {
         case DECREMENT:
             return {
                 counter: state.counter - 1
+            };
+        case MULTIPLY:
+            return {
+                counter: state.counter * action.payload
             };
         default:
             return state;
