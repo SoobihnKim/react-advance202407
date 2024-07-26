@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './ReduxCounter.module.css';
 import {useDispatch, useSelector} from "react-redux";
 import {counterActions} from "../store";
-// import {DECREMENT, INCREMENT, MULTIPLY, TOGGLE} from "../store";
 
 const ReduxCounter = () => {
 
