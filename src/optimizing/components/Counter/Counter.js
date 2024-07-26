@@ -50,7 +50,7 @@ const Counter = ({ initialCount }) => {
     // useCallback hooks는 변경사항이 없는 함수를 재생성하지 않고
     // 재사용하는 리액트의 훅입니다.
     // 2번째 파라미터 배열은 의존성 배열로 안에 있는 값이 변경되면
-    // 함수를 재성성합니다.
+    // 함수를 재생성합니다.
     const decrementHandler = useCallback(() => {
         // setCounter((prevCounter) => prevCounter - 1);
 
