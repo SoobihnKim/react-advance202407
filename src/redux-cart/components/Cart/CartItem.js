@@ -10,8 +10,13 @@ const CartItem = ({item}) => {
     const { title, quantity, total, price, id } = item;
 
     const addCartHandler = e => {
+        // fetch(); 리듀서 함수 내부에서 fetch 쓸 수 없고, 이렇게 써야함
         dispatch(cartActions.addCartItem(item));
     };
+
+    const removeCartHandler = e => {
+        dispatch(cartActions.removeCartItem(id));
+    }
 
     return (
         <li className={styles.item}>
@@ -27,7 +32,7 @@ const CartItem = ({item}) => {
                     x <span>{quantity}</span>
                 </div>
                 <div className={styles.actions}>
-                    <button>-</button>
+                    <button onClick={removeCartHandler}>-</button>
                     <button onClick={addCartHandler}>+</button>
                 </div>
             </div>
