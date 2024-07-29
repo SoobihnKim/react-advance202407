@@ -21,8 +21,7 @@ const cartslice = createSlice({
                 existingItem.quantity++;
                 existingItem.total += newCartItem.price;
             }
-
-
+            state.totalQuantity++;
         }
     }
 });
