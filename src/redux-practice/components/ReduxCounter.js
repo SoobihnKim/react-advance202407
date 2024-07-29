@@ -24,7 +24,7 @@ const ReduxCounter = () => {
         dispatch(counterActions.increment());
     }
 
-    const decreaseHandler = e =>{
+    const decreaseHandler = e => {
         dispatch(counterActions.decrement());
     };
 

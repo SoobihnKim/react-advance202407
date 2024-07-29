@@ -1,21 +1,15 @@
 import React from 'react';
-import ReduxCounter from './redux-practice/components/ReduxCounter';
-import Header from "./redux-practice/components/Header";
-import Auth from "./redux-practice/components/Auth";
-import UserProfile from "./redux-practice/components/UserProfile";
-import {useSelector} from "react-redux";
+import Layout from './redux-cart/components/Layout/Layout';
+import Cart from './redux-cart/components/Cart/Cart';
+import Products from './redux-cart/components/Shop/Products';
 
 const App = () => {
 
-    const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-
     return (
-        <>
-            <Header />
-            {!isLoggedIn && <Auth/>}
-            {isLoggedIn && <UserProfile/>}
-            <ReduxCounter />
-        </>
+        <Layout>
+            <Cart />
+            <Products />
+        </Layout>
     );
 };
 
