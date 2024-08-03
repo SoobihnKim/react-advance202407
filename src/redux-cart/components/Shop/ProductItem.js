@@ -16,7 +16,6 @@ const ProductItem = ({description, id, price, title}) => {
             total: price,
             price,
         }));
-
     };
 
     return (
